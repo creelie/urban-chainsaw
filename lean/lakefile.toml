@@ -1,0 +1,13 @@
+name = "Kourovka2071"
+defaultTargets = ["Kourovka2071", "Axioms"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.34.1"
+
+[[lean_lib]]
+name = "Kourovka2071"
+
+[[lean_lib]]
+name = "Axioms"

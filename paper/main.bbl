@@ -1,0 +1,52 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Kourovka}
+Unsolved problems in group theory. {T}he {K}ourovka notebook, no.~21, version
+  48 (2026).
+\newblock \href {http://arxiv.org/abs/1401.0300} {\path{arXiv:1401.0300}},
+  \href {https://doi.org/10.48550/arXiv.1401.0300}
+  {\path{doi:10.48550/arXiv.1401.0300}}.
+
+\bibitem{Prajapati}
+J.~Prajapati, A graph with four card types and five vertex orbits: the $k=4$
+  case of {K}ourovka {N}otebook {P}roblem 20.71, Preprint,
+  \url{https://kourovkanotebookorg.wordpress.com/wp-content/uploads/2026/10/kourovka-20-71-prajapati.pdf};
+  code at \url{https://github.com/infinityscroll/kourovka-20-71} (2026).
+
+\bibitem{Higman}
+G.~Higman, Suzuki $2$-groups, Illinois J. Math. 7 (1963) 79--96.
+\newblock \href {https://doi.org/10.1215/ijm/1255637483}
+  {\path{doi:10.1215/ijm/1255637483}}.
+
+\bibitem{HKM}
+W.~H. Haemers, H.~Kharaghani, M.~A. Meulenberg, Divisible design graphs, J.
+  Combin. Theory Ser. A 118~(3) (2011) 978--992.
+\newblock \href {https://doi.org/10.1016/j.jcta.2010.10.003}
+  {\path{doi:10.1016/j.jcta.2010.10.003}}.
+
+\bibitem{nauty}
+B.~D. McKay, A.~Piperno, Practical graph isomorphism, {II}, J. Symbolic Comput.
+  60 (2014) 94--112.
+\newblock \href {https://doi.org/10.1016/j.jsc.2013.09.003}
+  {\path{doi:10.1016/j.jsc.2013.09.003}}.
+
+\bibitem{MU21}
+L.~de~Moura, S.~Ullrich, The {L}ean 4 theorem prover and programming language,
+  in: Automated Deduction -- CADE 28, Vol. 12699 of Lecture Notes in Comput.
+  Sci., Springer, Cham, 2021, pp. 625--635.
+\newblock \href {https://doi.org/10.1007/978-3-030-79876-5_37}
+  {\path{doi:10.1007/978-3-030-79876-5_37}}.
+
+\bibitem{Mathlib20}
+{The mathlib Community}, The {L}ean mathematical library, in: Proceedings of
+  the 9th ACM SIGPLAN International Conference on Certified Programs and
+  Proofs, ACM, New York, 2020, pp. 367--381.
+\newblock \href {https://doi.org/10.1145/3372885.3373824}
+  {\path{doi:10.1145/3372885.3373824}}.
+
+\end{thebibliography}
