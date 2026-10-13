@@ -80,3 +80,8 @@ python3, julia, a C compiler and a C++17 compiler. The Lean build needs about
 Each program prints ten PASS lines and `orbits of Aut(X): 5, card types: 3`.
 
 To build the paper: `cd paper && latexmk -pdf main.tex`.
+
+## Archive
+
+Zenodo, all versions: [10.5281/zenodo.23339830](https://doi.org/10.5281/zenodo.23339830);
+release v1.0.0: [10.5281/zenodo.23339831](https://doi.org/10.5281/zenodo.23339831).
