@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "A graph with three card types and five vertex orbits (Kourovka Notebook Problem 20.71(b)): paper, Lean 4 formalization and verification code"
+authors:
+  - family-names: Bhattacharjee
+    given-names: Deep
+    orcid: "https://orcid.org/0000-0003-0466-750X"
+type: software
+license: MIT
+repository-code: "https://github.com/creelie/urban-chainsaw"
+version: 1.0.0
+date-released: 2026-10-13
+keywords:
+  - vertex-deleted subgraph
+  - pseudosimilar vertices
+  - Cayley graph
+  - Suzuki 2-group
+  - Kourovka Notebook
+  - Lean 4
