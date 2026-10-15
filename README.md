@@ -1,6 +1,16 @@
 # A graph with three card types and five vertex orbits
 
-Author: Deep Bhattacharjee (ORCID 0000-0003-0466-750X).
+Deep Bhattacharjee (corresponding author; Formerly, Electro-Gravitational
+Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India;
+itsdeep@live.com, d.bhattacharjee@erl-forschung.de; ORCID 0000-0003-0466-750X)
+and Ushashi Bhattacharya (Formerly, National Taiwan University, Taipei 106319,
+Taiwan; rai.bhattacharya.in@gmail.com; ORCID 0009-0002-2254-3914).
+
+- Paper: [`preprintKourovka2071b/Kourovka2071b.pdf`](preprintKourovka2071b/Kourovka2071b.pdf)
+- Lean 4 formalization on Zenodo, all versions: doi:[10.5281/zenodo.23339830](https://doi.org/10.5281/zenodo.23339830)
+- Master zip: [`MasterKourovka2071b_masterzipfinal2.zip`](https://github.com/creelie/urban-chainsaw/raw/main/MasterKourovka2071b_masterzipfinal2.zip)
+- Target journal: Discrete Mathematics (`journal/JOURNAL.md`)
+- MSC 2020: Primary 05C60; Secondary 05C25, 20D15, 68V15
 
 This repository answers part (b) of Problem 20.71 of the Kourovka Notebook
 ([arXiv:1401.0300v48](https://arxiv.org/abs/1401.0300)), posed by J. Lauri:
@@ -12,7 +22,9 @@ This repository answers part (b) of Problem 20.71 of the Kourovka Notebook
 
 Part (c) was answered by J. Prajapati (2026) with a graph on 9 vertices, who
 also showed that an example for k = 2 or k = 3 needs at least 13 vertices.
-Part (a) remains open.
+Part (a) remains open. Part (b) is listed as open in version 48 of the
+Notebook (6 October 2026); this was checked again on 15 October 2026 against
+the Notebook's site, arXiv and the web, and no other answer was found.
 
 ## Result
 
@@ -44,16 +56,25 @@ Then X = Y - (0, 0) (434 edges).
 
 | Path | Contents |
 |---|---|
-| `paper/` | LaTeX source (`main.tex`, `refs.bib`, Elsevier `elsarticle` class and style) and the compiled `main.pdf` |
-| `lean/` | Lean 4 + Mathlib formalization; `Kourovka2071/Main.lean` holds `K2071.kourovka_20_71b` |
+| `paper/` | LaTeX source (`main.tex`, `refs.bib`, Elsevier `elsarticle` class and style, `figures/` as PNG) |
+| `figures/` | TikZ sources of the three figures and `make_figures.sh`, which writes them to `paper/figures/` |
+| `lean/` | Lean 4 + Mathlib formalization; `Kourovka2071/Main.lean` holds `K2071.main_theorem` and `K2071.kourovka_20_71b` |
 | `checks/python/`, `checks/julia/`, `checks/c/`, `checks/cpp/` | four independent programs checking the graph, the orbits and the card types |
 | `run_all.sh` | runs the Lean build, the axiom check and all programs |
+| `make_dist.sh` | builds `dist/`, the preprint folder and the master zip |
 | `journal/JOURNAL.md` | target journal, format rules and AI policy |
-| `dist/` | the paper PDF, the arXiv tarball and `MasterKourovka2071Zip.zip`, which holds every file of the repository |
+| `dist/` | `Kourovka2071b_final2.pdf`, `Kourovka2071b_final2-tex.zip` (source with PNG figures) and `Kourovka2071b_final2-arxiv.tar.gz` |
+| `preprintKourovka2071b/` | the paper as a PDF, and nothing else |
+| `MasterKourovka2071b_masterzipfinal2.zip` | every tracked file of the repository with `dist/` |
 
 ## Lean statement
 
 ```lean
+theorem main_theorem :
+    ∃ (V : Type) (_ : Fintype V) (G : SimpleGraph V),
+      Nat.card V = 63 ∧ G.Connected ∧ Nat.card (Quotient (cardSetoid G)) = 3 ∧
+        Nat.card (Quotient (orbitSetoid G)) = 5
+
 theorem kourovka_20_71b :
     ∃ (V : Type) (_ : Fintype V) (G : SimpleGraph V),
       G.Connected ∧ Nat.card (Quotient (cardSetoid G)) = 3 ∧
@@ -65,8 +86,8 @@ Here `cardSetoid G` relates v and w when `G.induce {u | u ≠ v}` and
 an automorphism of G maps v to w. The proof gives the two automorphisms and the
 card isomorphisms explicitly and separates the five orbits by a counting
 invariant; the finite checks are made by `decide +kernel`.
-`#print axioms K2071.kourovka_20_71b` reports `[propext, Classical.choice,
-Quot.sound]`; there is no `sorry`, `admit`, `native_decide` or added axiom.
+`#print axioms` reports `[propext, Classical.choice, Quot.sound]` for both
+theorems; there is no `sorry`, `admit`, `native_decide` or added axiom.
 
 ## Running the checks
 
@@ -79,9 +100,12 @@ python3, julia, a C compiler and a C++17 compiler. The Lean build needs about
 
 Each program prints ten PASS lines and `orbits of Aut(X): 5, card types: 3`.
 
-To build the paper: `cd paper && latexmk -pdf main.tex`.
+To build the paper and the release files: `./make_dist.sh` (needs latexmk,
+zip and tar; `figures/make_figures.sh` redraws the figures).
 
 ## Archive
 
-Zenodo, all versions: [10.5281/zenodo.23339830](https://doi.org/10.5281/zenodo.23339830);
-release v1.0.0: [10.5281/zenodo.23339831](https://doi.org/10.5281/zenodo.23339831).
+Release v2.0.0 adds the second author and the journal format; its Zenodo DOI
+is recorded here once minted. Earlier release v1.0.0:
+[10.5281/zenodo.23339831](https://doi.org/10.5281/zenodo.23339831); all
+versions: [10.5281/zenodo.23339830](https://doi.org/10.5281/zenodo.23339830).

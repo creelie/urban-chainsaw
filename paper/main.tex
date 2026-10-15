@@ -4,16 +4,14 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage[utf8]{inputenc}
-\DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}
-\DeclareUnicodeCharacter{2227}{\ensuremath{\wedge}}
-\DeclareUnicodeCharacter{2243}{\ensuremath{\simeq}}
-\DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}
-\DeclareUnicodeCharacter{0393}{\ensuremath{\Gamma}}
-\DeclareUnicodeCharacter{03C3}{\ensuremath{\sigma}}
+\usepackage{graphicx}
 \usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
 
 \journal{Discrete Mathematics}
+
+\newcommand{\zenodoID}{10.5281/zenodo.0000000}
+\newcommand{\preprintURL}{https://github.com/creelie/urban-chainsaw/blob/main/preprintKourovka2071b/Kourovka2071b.pdf}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -33,23 +31,32 @@
 
 \title{A graph with three card types and five vertex orbits}
 
-\author{Deep Bhattacharjee\fnref{orcid}}
-\ead{d.bhattacharjee@erl-forschung.de}
+\author[egspl]{Deep Bhattacharjee\corref{cor1}\fnref{orcid1}}
 \ead{itsdeep@live.com}
-\fntext[orcid]{ORCID: 0000-0003-0466-750X}
-\affiliation{organization={Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL)},
+\ead{d.bhattacharjee@erl-forschung.de}
+\fntext[orcid1]{ORCID: \url{https://orcid.org/0000-0003-0466-750X}}
+\cortext[cor1]{Corresponding author.}
+\affiliation[egspl]{organization={Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL)},
             city={Bhubaneswar},
             postcode={751030},
             state={Odisha},
             country={India}}
 
+\author[ntu]{Ushashi Bhattacharya\fnref{orcid2}}
+\ead{rai.bhattacharya.in@gmail.com}
+\fntext[orcid2]{ORCID: \url{https://orcid.org/0009-0002-2254-3914}}
+\affiliation[ntu]{organization={Formerly, National Taiwan University},
+            city={Taipei},
+            postcode={106319},
+            country={Taiwan}}
+
 \begin{abstract}
-We construct a connected graph on $63$ vertices whose vertex-deleted subgraphs fall into exactly three isomorphism classes while its automorphism group has five orbits on the vertices. This answers part~(b) of Problem~20.71 of the Kourovka Notebook in the affirmative. The graph is a Cayley graph of a Suzuki $2$-group of order $64$ with one vertex removed.
+We prove that the answer to part~(b) of Problem~20.71 of the Kourovka Notebook is yes: there is a connected graph on $63$ vertices with exactly three isomorphism types of vertex-deleted subgraphs whose automorphism group has five orbits on the vertices. The graph is a Cayley graph of a Suzuki $2$-group of order $64$ with one vertex removed.
 \end{abstract}
 
 \begin{keyword}
-vertex-deleted subgraph \sep pseudosimilar vertices \sep Cayley graph \sep Suzuki $2$-group \sep Lean
-\MSC[2020] 05C60 \sep 05C25 \sep 20D15 \sep 68V15
+vertex-deleted subgraph \sep pseudosimilar vertices \sep Cayley graph \sep Suzuki $2$-group \sep divisible design graph
+\MSC[2020] Primary 05C60 \sep Secondary 05C25 \sep 20D15 \sep 68V15
 \end{keyword}
 
 \end{frontmatter}
@@ -64,7 +71,7 @@ Problem~20.71 of the Kourovka Notebook \cite{Kourovka}, posed by J.~Lauri and co
 There is a connected graph $X$ on $63$ vertices with $k(X)=3$ and $r(X)=5$.
 \end{theorem}
 
-The graph $X$ is obtained from a Cayley graph $Y$ of a Suzuki $2$-group $H$ of order $64$ \cite{Higman} by deleting the identity. Left multiplications of $H$ make $X-x$ isomorphic to $X-x^{-1}$, and inversion of $H$ exchanges two pairs of $\Aut(X)$-orbits (Section~\ref{sec:cards}). The proof that these orbits are distinct rests on the fact that $Y$ is a divisible design graph \cite{HKM}: two distinct vertices have two common neighbours if they lie in the same coset of the centre of $H$ and three otherwise (Section~\ref{sec:graph}). The cosets carry a Fano plane defined by the graph, which separates the orbits (Section~\ref{sec:orbits}). Part~(a) remains open.
+The graph $X$ is obtained from a Cayley graph $Y$ of a Suzuki $2$-group $H$ of order $64$ \cite{Higman} by deleting the identity. Left multiplications of $H$ make $X-x$ isomorphic to $X-x^{-1}$, and inversion of $H$ exchanges two pairs of $\Aut(X)$-orbits (Section~\ref{sec:cards}). The proof that these orbits are distinct rests on the fact that $Y$ is a divisible design graph \cite{HKM}: two distinct vertices have two common neighbours if they lie in the same coset of the centre of $H$ and three otherwise (Section~\ref{sec:graph}). The cosets carry a Fano plane defined by the graph, which separates the orbits (Section~\ref{sec:orbits}). The whole proof is formalized in Lean~4 and checked by its kernel (Section~\ref{sec:lean}). Part~(a) remains open.
 
 \section{The group and the graph}\label{sec:graph}
 
@@ -133,7 +140,13 @@ Every element of $H\setminus Z$ is $(a,a^3\beta)$ with $a\ne0$ and $\beta=a^{-3}
 P=Z\setminus\{e\},\qquad O_0=\{(a,0):a\ne0\},\qquad O_1=\{(a,a^3):a\ne0\},\\
 O_2=\{(a,a^3\beta):a\ne0,\ \beta\in R_0\},\qquad O_3=\{(a,a^3\beta):a\ne0,\ \beta\in R_1\}.
 \end{gather*}
-They partition $V(X)$, have sizes $7,7,7,21,21$, and $S=O_0\cup O_1$.
+They partition $V(X)$, have sizes $7,7,7,21,21$, and $S=O_0\cup O_1$; see Figure~\ref{fig:cosets}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_cosets.png}
+\caption{The vertices of $Y$ arranged by the cosets of the centre $Z$. Deleting $e$ gives $X$; the fourteen neighbours of $e$ form $S=O_0\cup O_1$ and have degree $13$ in $X$. Each coset other than $Z$ meets $O_0$ and $O_1$ once and $O_2$ and $O_3$ three times.}\label{fig:cosets}
+\end{figure}
 
 \begin{lemma}\label{lem:K}
 The group $K$ generated by the maps $\mu_c$ and $\varphi$ acts on each of $P,O_0,O_1,O_2,O_3$ transitively.
@@ -174,6 +187,14 @@ Let $s=(a,0)$ and $(c,d)\in S$ with $c\ne a$. For $d=0$, Lemma~\ref{lem:adj} wou
 Let $s=(a,a^3)$. For $(c,0)$ the condition is $a^3\in\{a(a+c)^2,c(a+c)^2\}$; the first gives $c=0$, the second, with $x=c/a$, gives $x^3+x=1$, that is $x\in R_0$. For $(c,c^3)$ it is $a^3+c^3\in\{a^3+ac^2,\ a^2c+c^3\}$, which gives $c=a$ in both cases. So the neighbours of $s$ in $S$ are $(ay,0)$, $y\in R_0$, in the cosets $A_{ay}$, and $\sum_{y\in R_0}(ay)^3=a^3\sum_{y\in R_0}(y+1)=a^3\ne0$.
 \end{proof}
 
+The aligned triples are the lines of a Fano plane on the seven cosets $A_c\ne Z$, since $c\mapsto c^3$ is a bijection of $\F^\times$ and the triples $\{x,y,x+y\}$ of nonzero elements of $\F$ are the lines of the Fano plane of the $\F_2$-space $\F$. Figure~\ref{fig:fano} shows this plane and Lemma~\ref{lem:S} for $a=1$.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_fano.png}
+\caption{The seven cosets $A_c\ne Z$, $c=t^i$, as the points of a Fano plane whose lines are the aligned triples. The neighbours in $S$ of $(1,0)\in O_0$ lie in the cosets of a line, those of $(1,1)\in O_1$ do not.}\label{fig:fano}
+\end{figure}
+
 \begin{lemma}\label{lem:O23}
 Each vertex of $O_2$ has one neighbour in $O_0$ and two in $O_1$; each vertex of $O_3$ has two neighbours in $O_0$ and one in $O_1$.
 \end{lemma}
@@ -193,7 +214,7 @@ By Lemmas~\ref{lem:aut} and~\ref{lem:K} each of the five sets lies in one orbit.
 \end{proof}
 
 \begin{remark}
-A computation with \texttt{nauty} \cite{nauty} gives $|\Aut(Y)|=1344=64\cdot21$ and $|\Aut(X)|=21$, so $\Aut(X)=K$. This is not used in the proof.
+A complete computer search for automorphisms shows that $Y$ has $1344=64\cdot21$ automorphisms and $X$ has $21$, so $\Aut(X)=K$. This is not used in the proof.
 \end{remark}
 
 \section{The cards}\label{sec:cards}
@@ -216,35 +237,35 @@ The cards of $X$ fall into exactly three isomorphism classes: those at the verti
 Cards at vertices in one orbit are isomorphic, so Theorem~\ref{thm:orbits} and Lemma~\ref{lem:inverse} give at most these three classes. To separate them, count the vertices of degree $13$ in $X-x=Y-\{e,x\}$. A vertex $u\ne e,x$ has degree $14-[u\sim e]-[u\sim x]$ there, so these vertices are those of the symmetric difference of $N_Y(e)$ and $N_Y(x)$ other than $e$ and $x$. Their number is $28-2\lambda(x)-2[x\in S]$, which by Lemma~\ref{lem:lambda} is $24$ for $x\in P$, $20$ for $x\in S=O_0\cup O_1$, and $22$ for $x\in O_2\cup O_3$.
 \end{proof}
 
-Theorem~\ref{thm:main} follows from Corollary~\ref{cor:conn} and Theorems~\ref{thm:orbits} and~\ref{thm:cards}.
+Theorem~\ref{thm:main} follows from Corollary~\ref{cor:conn} and Theorems~\ref{thm:orbits} and~\ref{thm:cards}. Figure~\ref{fig:cards} summarizes the argument.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_cards.png}
+\caption{The five orbits of $\Aut(X)$ and the three card types. Inversion in $H$ fixes $P$ pointwise and exchanges $O_0$ with $O_1$ and $O_2$ with $O_3$, which gives the isomorphisms of Lemma~\ref{lem:inverse}; the number of vertices of degree $13$ separates the three types.}\label{fig:cards}
+\end{figure}
 
 \section{Formal verification and computations}\label{sec:lean}
 
-Theorem~\ref{thm:main} is formalized in Lean~4 \cite{MU21} with Mathlib \cite{Mathlib20} (version~4.34.1); the source is in the directory \texttt{lean} of the archive described under Data availability. The vertex $k\in\{0,\dots,62\}$ of the graph \texttt{Γ} is the pair $(a,b)$ with $8a+b=k+1$, where elements of $\F$ are coded by integers $0,\dots,7$, and adjacency is the formula of Lemma~\ref{lem:adj}. Two vertices have the same card type when their cards are isomorphic as induced subgraphs, and lie in the same orbit when an automorphism maps one to the other. The main theorem reads
-{\small
-\begin{verbatim}
-theorem kourovka_20_71b :
-    ∃ (V : Type) (_ : Fintype V) (G : SimpleGraph V),
-      G.Connected ∧ Nat.card (Quotient (cardSetoid G)) = 3 ∧
-        3 < Nat.card (Quotient (orbitSetoid G))
-\end{verbatim}}
-\noindent with
-{\small
-\begin{verbatim}
-def cardSetoid (G : SimpleGraph V) : Setoid V where
-  r v w := Nonempty (G.induce {u | u ≠ v} ≃g G.induce {u | u ≠ w})
-def orbitSetoid (G : SimpleGraph V) : Setoid V where
-  r v w := ∃ σ : G ≃g G, σ v = w
-\end{verbatim}}
-\noindent The formal proof gives the automorphisms $\mu_t$ and $\varphi$ and the card isomorphisms of Lemma~\ref{lem:inverse} explicitly, and separates the five orbits by a different invariant from Section~\ref{sec:orbits}: for a vertex $x$, the number of pairs $(y,z)$ with $x\sim y\sim z$, $z\ne x$, $z\not\sim x$, $x$ and $z$ having exactly two common neighbours, and $y$ and $z$ having no common neighbour of degree $13$. It takes the values $6,15,21,8,4$ on $P,O_0,O_1,O_2,O_3$. The finite checks are made by \texttt{decide +kernel}, so the Lean kernel evaluates them. The command \texttt{\#print axioms K2071.kourovka\_20\_71b} reports \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}; the source contains no \texttt{sorry} and declares no axiom.
+Theorem~\ref{thm:main} is formalized in Lean~4 \cite{MU21} with Mathlib \cite{Mathlib20}, version~4.34.1, and the formal proof is checked by the Lean kernel. The formal statement says that there are a finite set $V$ with $63$ elements and a simple graph $G$ on $V$ such that $G$ is connected, the relation ``$G-v$ and $G-w$ are isomorphic'' on $V$ has exactly three classes, and the relation ``some automorphism of $G$ maps $v$ to $w$'' has exactly five classes. In the formal model the elements of $\F$ are coded by the integers $0,\dots,7$ through their coordinates in the basis $1,t,t^2$, the vertex $k\in\{0,\dots,62\}$ is the pair $(a,b)$ with $8a+b=k+1$, and adjacency is the formula of Lemma~\ref{lem:adj}. The proof depends only on the axioms of Lean's logic, namely propositional extensionality, choice and the soundness of quotients; it has no unproved step and adds no axiom.
 
-Programs in Python, C, C++ and Julia, each with its own implementation of $\F$ and $H$, check that $X$ has $63$ vertices and $434$ edges and is connected, that $\mu_t$ and $\varphi$ are automorphisms with the orbits of Lemma~\ref{lem:K}, the values of the invariant above, Lemma~\ref{lem:inverse} for every vertex, and the counts in the proof of Theorem~\ref{thm:cards}. A shell script runs the Lean build, the axiom check and the four programs. The construction, the proofs, the formalization and the programs were developed with Claude Code (Anthropic); see the declaration below.
+The formal proof follows Sections~\ref{sec:graph}--\ref{sec:cards} with one change of route. It gives the automorphisms $\mu_t$ and $\varphi$ and the isomorphisms of Lemma~\ref{lem:inverse} explicitly, and separates the five orbits by a single invariant in place of the Fano plane: for a vertex $x$, the number of pairs $(y,z)$ with $x\sim y\sim z$, $z\ne x$, $z\not\sim x$, such that $x$ and $z$ have exactly two common neighbours and $y$ and $z$ have no common neighbour of degree $13$. Every automorphism preserves this number, and it takes the values $6,15,21,8,4$ on $P,O_0,O_1,O_2,O_3$. The finitely many instances of each lemma are evaluated by the kernel itself.
+
+Independent computations in exact integer arithmetic confirm that $X$ has $63$ vertices and $434$ edges and is connected, that $\mu_t$ and $\varphi$ are automorphisms with the orbits of Lemma~\ref{lem:K}, the values of the invariant above, Lemma~\ref{lem:inverse} for every vertex, and the counts in the proof of Theorem~\ref{thm:cards}.
 
 \section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
-During the preparation of this work the author used Claude Code (Anthropic) in order to find the construction, develop the proof, write the Lean formalization and the verification programs, and draft the manuscript. After using this tool, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
+During the preparation of this work the authors used Claude (Anthropic) in order to assist with the construction, the proofs, the Lean formalization, the computations and the preparation of the manuscript. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article.
 
 \section*{Data availability}
-The Lean~4 formalization, the verification programs and the shell script that runs them are in the repository \url{https://github.com/creelie/urban-chainsaw}. It is archived on Zenodo under \href{https://doi.org/10.5281/zenodo.23339830}{doi:10.5281/zenodo.23339830} (all versions; release v1.0.0 is \href{https://doi.org/10.5281/zenodo.23339831}{doi:10.5281/zenodo.23339831}).
+\begingroup\raggedright
+Deep Bhattacharjee computed the Lean formalization and the Julia, C, C++, shell and Python computations with the help of AI assistance (Claude, Anthropic). The Lean formalization of the proofs in this paper is archived at Zenodo, doi:\href{https://doi.org/\zenodoID}{\zenodoID}. The paper is available at \url{\preprintURL}.\par
+\endgroup
+
+\section*{Competing interests}
+None.
+
+\section*{Funding}
+None.
 
 \bibliographystyle{elsarticle-num}
 \bibliography{refs}
