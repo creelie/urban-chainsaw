@@ -7,7 +7,7 @@ and Ushashi Bhattacharya (Formerly, National Taiwan University, Taipei 106319,
 Taiwan; rai.bhattacharya.in@gmail.com; ORCID 0009-0002-2254-3914).
 
 - Paper: [`preprintKourovka2071b/Kourovka2071b.pdf`](preprintKourovka2071b/Kourovka2071b.pdf)
-- Lean 4 formalization on Zenodo, all versions: doi:[10.5281/zenodo.23339830](https://doi.org/10.5281/zenodo.23339830)
+- Lean 4 formalization on Zenodo: doi:[10.5281/zenodo.23384197](https://doi.org/10.5281/zenodo.23384197) (release v2.0.0; all versions: doi:[10.5281/zenodo.23339830](https://doi.org/10.5281/zenodo.23339830))
 - Master zip: [`MasterKourovka2071b_masterzipfinal2.zip`](https://github.com/creelie/urban-chainsaw/raw/main/MasterKourovka2071b_masterzipfinal2.zip)
 - Target journal: Discrete Mathematics (`journal/JOURNAL.md`)
 - MSC 2020: Primary 05C60; Secondary 05C25, 20D15, 68V15
@@ -105,7 +105,8 @@ zip and tar; `figures/make_figures.sh` redraws the figures).
 
 ## Archive
 
-Release v2.0.0 adds the second author and the journal format; its Zenodo DOI
-is recorded here once minted. Earlier release v1.0.0:
-[10.5281/zenodo.23339831](https://doi.org/10.5281/zenodo.23339831); all
-versions: [10.5281/zenodo.23339830](https://doi.org/10.5281/zenodo.23339830).
+| Release | Zenodo DOI |
+|---|---|
+| v2.0.0 (two authors, journal format) | [10.5281/zenodo.23384197](https://doi.org/10.5281/zenodo.23384197) |
+| v1.0.0 | [10.5281/zenodo.23339831](https://doi.org/10.5281/zenodo.23339831) |
+| all versions | [10.5281/zenodo.23339830](https://doi.org/10.5281/zenodo.23339830) |

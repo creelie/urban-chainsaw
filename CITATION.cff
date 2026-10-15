@@ -15,7 +15,17 @@ authors:
 type: software
 license: MIT
 repository-code: "https://github.com/creelie/urban-chainsaw"
-doi: 10.5281/zenodo.23339830
+doi: 10.5281/zenodo.23384197
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23384197
+    description: "Zenodo, release v2.0.0"
+  - type: doi
+    value: 10.5281/zenodo.23339831
+    description: "Zenodo, release v1.0.0"
+  - type: doi
+    value: 10.5281/zenodo.23339830
+    description: "Zenodo, all versions"
 version: 2.0.0
 date-released: 2026-10-15
 keywords:
