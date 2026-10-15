@@ -1,13 +1,17 @@
 {
-  "title": "A graph with three card types and five vertex orbits (Kourovka Notebook Problem 20.71(b)): paper, Lean 4 formalization and verification code",
-  "description": "<p>Problem 20.71 of the Kourovka Notebook (J. Lauri) asks whether a connected graph with exactly k isomorphism types of vertex-deleted subgraphs (cards) can have more than k orbits of its automorphism group on the vertices, for k = 2, 3, 4. The paper answers k = 3 in the affirmative: the Cayley graph of the Suzuki 2-group of order 64 on F_8 x F_8, with product (a,b)(c,d) = (a+c, b+d+ac^2) and connection set {(a,0), (a,a^3) : a != 0}, minus the identity, is a connected graph on 63 vertices with exactly 3 card types and 5 vertex orbits. The proof is by hand.</p><p><code>paper/</code> holds the LaTeX source (Elsevier elsarticle) and the compiled PDF; <code>dist/</code> holds the PDF, the arXiv tarball and <code>MasterKourovka2071Zip.zip</code> with every file of the repository. <code>lean/</code> is a Lean 4 and Mathlib project proving the statement, with the finite checks made by decide +kernel; its theorems depend only on the axioms propext, Classical.choice and Quot.sound. <code>checks/</code> contains independent checks in Python, C, C++ and Julia, and <code>run_all.sh</code> builds the Lean project, checks the axioms and runs all programs.</p>",
+  "title": "A graph with three card types and five vertex orbits (Kourovka Notebook Problem 20.71(b)): Lean 4 formalization and verification code",
   "upload_type": "software",
-  "license": "mit",
-  "access_right": "open",
+  "description": "<p>Lean 4 formalization of the paper <em>A graph with three card types and five vertex orbits</em> by Deep Bhattacharjee and Ushashi Bhattacharya, with the LaTeX source, the paper as a PDF, and independent checks in Python, Julia, C and C++.</p><p>Problem 20.71 of the Kourovka Notebook (J. Lauri) asks whether a connected graph with exactly k isomorphism types of vertex-deleted subgraphs (cards) can have more than k orbits of its automorphism group on the vertices, for k = 2, 3, 4. The paper answers k = 3 in the affirmative: the Cayley graph of the Suzuki 2-group of order 64 on F_8 x F_8, with product (a,b)(c,d) = (a+c, b+d+ac^2) and connection set {(a,0), (a,a^3) : a != 0}, minus the identity, is a connected graph on 63 vertices with exactly 3 card types and 5 vertex orbits. The Lean theorem K2071.main_theorem states this and depends only on the axioms propext, Classical.choice and Quot.sound.</p>",
   "creators": [
     {
       "name": "Bhattacharjee, Deep",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India",
       "orcid": "0000-0003-0466-750X"
+    },
+    {
+      "name": "Bhattacharya, Ushashi",
+      "affiliation": "Formerly, National Taiwan University, Taipei 106319, Taiwan",
+      "orcid": "0009-0002-2254-3914"
     }
   ],
   "keywords": [
@@ -18,12 +22,12 @@
     "Kourovka Notebook",
     "Lean 4"
   ],
+  "license": "MIT",
   "related_identifiers": [
     {
       "identifier": "arXiv:1401.0300",
       "relation": "references",
       "scheme": "arxiv"
     }
-  ],
-  "language": "eng"
+  ]
 }

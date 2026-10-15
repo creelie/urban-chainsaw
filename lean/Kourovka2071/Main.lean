@@ -246,4 +246,13 @@ theorem kourovka_20_71b :
         3 < Nat.card (Quotient (orbitSetoid G)) :=
   ⟨Fin 63, inferInstance, Γ, connected, card_types_eq, by rw [orbits_eq]; decide⟩
 
+/-- **Main theorem.** The graph `Γ` has `63` vertices, is connected, has exactly three
+isomorphism types of cards, and its automorphism group has exactly five orbits on the
+vertices. -/
+theorem main_theorem :
+    ∃ (V : Type) (_ : Fintype V) (G : SimpleGraph V),
+      Nat.card V = 63 ∧ G.Connected ∧ Nat.card (Quotient (cardSetoid G)) = 3 ∧
+        Nat.card (Quotient (orbitSetoid G)) = 5 :=
+  ⟨Fin 63, inferInstance, Γ, by simp, connected, card_types_eq, orbits_eq⟩
+
 end K2071

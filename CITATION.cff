@@ -1,23 +1,23 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-title: "A graph with three card types and five vertex orbits (Kourovka Notebook Problem 20.71(b)): paper, Lean 4 formalization and verification code"
+title: "A graph with three card types and five vertex orbits (Kourovka Notebook Problem 20.71(b)): Lean 4 formalization and verification code"
 authors:
   - family-names: Bhattacharjee
     given-names: Deep
+    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+    email: itsdeep@live.com
     orcid: "https://orcid.org/0000-0003-0466-750X"
+  - family-names: Bhattacharya
+    given-names: Ushashi
+    affiliation: "Formerly, National Taiwan University, Taipei 106319, Taiwan"
+    email: rai.bhattacharya.in@gmail.com
+    orcid: "https://orcid.org/0009-0002-2254-3914"
 type: software
 license: MIT
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.23339830
-    description: All versions on Zenodo
-  - type: doi
-    value: 10.5281/zenodo.23339831
-    description: Release v1.0.0
 repository-code: "https://github.com/creelie/urban-chainsaw"
-version: 1.0.1
 doi: 10.5281/zenodo.23339830
-date-released: 2026-10-13
+version: 2.0.0
+date-released: 2026-10-15
 keywords:
   - vertex-deleted subgraph
   - pseudosimilar vertices

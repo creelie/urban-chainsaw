@@ -28,7 +28,7 @@ if [ "${1:-}" != "--no-lean" ]; then
     echo "Lean build failed" >&2; exit 1
   fi
   step "Lean 4: axioms of the main theorems"
-  for thm in kourovka_20_71b orbits_eq card_types_eq connected; do
+  for thm in main_theorem kourovka_20_71b orbits_eq card_types_eq connected; do
     line="$(grep "'K2071.$thm' depends on axioms" "$BUILD/lean.log" || true)"
     echo "$line"
     case "$line" in
