@@ -1,8 +1,9 @@
 # A graph with three card types and five vertex orbits
 
 Deep Bhattacharjee (corresponding author; Formerly, Electro-Gravitational
-Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India;
-itsdeep@live.com, d.bhattacharjee@erl-forschung.de; ORCID 0000-0003-0466-750X)
+Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India, and
+Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata
+700073, West Bengal, India; itsdeep@live.com, d.bhattacharjee@erl-forschung.de; ORCID 0000-0003-0466-750X)
 and Ushashi Bhattacharya (Formerly, National Taiwan University, Taipei 106319,
 Taiwan; rai.bhattacharya.in@gmail.com; ORCID 0009-0002-2254-3914).
 
@@ -56,7 +57,7 @@ Then X = Y - (0, 0) (434 edges).
 
 | Path | Contents |
 |---|---|
-| `paper/` | LaTeX source (`main.tex`, `refs.bib`, Elsevier `elsarticle` class and style, `figures/` as PNG) |
+| `paper/` | LaTeX source (`main.tex` with the references in the source, Elsevier `elsarticle` class, `figures/` as PNG) |
 | `figures/` | TikZ sources of the three figures and `make_figures.sh`, which writes them to `paper/figures/` |
 | `lean/` | Lean 4 + Mathlib formalization; `Kourovka2071/Main.lean` holds `K2071.main_theorem` and `K2071.kourovka_20_71b` |
 | `checks/python/`, `checks/julia/`, `checks/c/`, `checks/cpp/` | four independent programs checking the graph, the orbits and the card types |
