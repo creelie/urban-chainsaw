@@ -25,31 +25,35 @@ open access) and the Journal of Graph Theory are alternatives.
 - The manuscript is 10 pages in the `elsarticle` preprint layout (12 pt, single
   column), with three figures.
 - Elsevier accepts a first submission as a single PDF; after acceptance the
-  LaTeX source, the class file and the `.bib` or `.bbl` file are uploaded. The
-  arXiv tarball in `dist/` contains exactly these files.
+  LaTeX source and the class file are uploaded. The references are in
+  `main.tex` itself (`thebibliography`), so no `.bib` or `.bbl` file is needed;
+  the arXiv tarball in `dist/` contains exactly these files.
 - Required front matter, all present: title, two authors with addresses,
   emails and ORCID (Deep Bhattacharjee, corresponding author; Ushashi
   Bhattacharya), abstract, keywords, MSC 2020 codes (Primary 05C60; Secondary
   05C25, 20D15, 68V15).
 - Check the guide for authors on the journal homepage for any page or abstract
   limit before submitting.
-- The paper ends with Data availability, Competing interests (none) and
-  Funding (none); Editorial Manager asks for the same declarations on the
-  submission form.
+- The paper ends with "Data and code availability" (the Zenodo DOI, the
+  preprint link and the statement that Deep Bhattacharjee carried out the
+  computations and verifications and that the proofs and text were drafted
+  with AI assistance from Claude, Anthropic, both authors approving the final
+  version) and "Ethical declarations" (funding none, competing interests
+  none); Editorial Manager asks for the same declarations on the submission
+  form.
 
 ## Policy on AI assistance (Elsevier generative AI policy for journals)
 
 - AI tools may not be listed as authors or cited as authors.
-- Use of AI tools in manuscript preparation is disclosed in a separate section
-  titled "Declaration of generative AI and AI-assisted technologies in the
-  manuscript preparation process", placed before the references; the statement
-  appears in the published article. Elsevier's recommended wording is used in
-  `paper/main.tex`.
-- Use of AI tools in the research process is stated in the declaration and in
-  the Data availability section.
+- Use of AI tools in manuscript preparation is disclosed in the "Data and
+  code availability" section of `paper/main.tex`; if Editorial Manager asks
+  for Elsevier's separate "Declaration of generative AI and AI-assisted
+  technologies in the manuscript preparation process", give the same statement
+  there.
 - The authors remain responsible for checking all AI-generated output,
-  including references. The DOIs in `paper/refs.bib` were checked against
+  including references. The DOIs in the bibliography of `paper/main.tex` were checked against
   their Crossref records on 15 October 2026 (Higman, Haemers-Kharaghani-
-  Meulenberg, de Moura-Ullrich, the mathlib Community), the problem text
-  against arXiv:1401.0300v48, and the link to Prajapati's preprint.
+  Meulenberg, de Moura-Ullrich, the mathlib Community) and on 17 October 2026
+  (the three self-citations), the problem text against arXiv:1401.0300v48,
+  and the link to Prajapati's preprint.
 - Source: https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals
