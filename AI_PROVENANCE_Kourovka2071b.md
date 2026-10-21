@@ -4,7 +4,7 @@ Authors: Deep Bhattacharjee (corresponding author, ORCID 0000-0003-0466-750X)
 and Ushashi Bhattacharya (ORCID 0009-0002-2254-3914).
 
 - Paper: https://github.com/creelie/urban-chainsaw/blob/main/preprintKourovka2071b/Kourovka2071b.pdf
-- Lean formalisation and code: doi:10.5281/zenodo.23384197 (release v2.0.0; all versions doi:10.5281/zenodo.23339830)
+- Lean formalisation and code: release v2.1.0, https://github.com/creelie/urban-chainsaw/releases/tag/v2.1.0
 - Repository: https://github.com/creelie/urban-chainsaw
 
 ## Result
@@ -61,9 +61,7 @@ Kourovka Notebook site or on the web.
 ## Text and references
 
 The paper is written in one analytical flow, with the references in the
-LaTeX source itself. Besides the works it builds on, the bibliography
-carries three self-citations of the authors, placed in footnotes where they
-bear on the text (orbit counting under a finite group, the word metric of a
-Cayley graph, and the nerve of a family of sets); every entry was checked
+LaTeX source itself. The bibliography carries the works it builds on;
+every entry was checked
 against its Crossref record or its source page, and none comes from
 TechRxiv, Qeios, Authorea or EasyChair.
