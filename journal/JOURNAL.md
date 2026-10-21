@@ -34,7 +34,8 @@ open access) and the Journal of Graph Theory are alternatives.
   05C25, 20D15, 68V15).
 - Check the guide for authors on the journal homepage for any page or abstract
   limit before submitting.
-- The paper ends with "Data and code availability" (the Zenodo DOI, the
+- The paper ends with "Data and code availability" (the GitHub release v2.1.0,
+  the
   preprint link and the statement that Deep Bhattacharjee carried out the
   computations and verifications and that the proofs and text were drafted
   with AI assistance from Claude, Anthropic, both authors approving the final
@@ -54,6 +55,8 @@ open access) and the Journal of Graph Theory are alternatives.
   including references. The DOIs in the bibliography of `paper/main.tex` were checked against
   their Crossref records on 15 October 2026 (Higman, Haemers-Kharaghani-
   Meulenberg, de Moura-Ullrich, the mathlib Community) and on 17 October 2026
-  (the three self-citations), the problem text against arXiv:1401.0300v48,
+  the problem text against arXiv:1401.0300v48,
   and the link to Prajapati's preprint.
 - Source: https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals
+- Fee: none on the subscription route; optional open access carries a charge and is not needed.
+- The journal version is in `paper/paper1/` (PDF) and `paper/paper2/` (LaTeX source zip), the same files as in `dist/`.

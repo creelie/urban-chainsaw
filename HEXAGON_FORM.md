@@ -19,13 +19,13 @@ Provenance statement: The construction of the graph, the proofs, the text, the f
 
 Tools used: Anthropic - Claude (Claude Code); Lean community - Lean 4 (v4.34.1) with Mathlib; Python; Julia; C; C++; shell.
 arXiv identifier: none (not posted on arXiv).
-Formalization: https://github.com/creelie/urban-chainsaw/blob/main/lean/Kourovka2071.lean (archived at Zenodo, release v2.0.0: https://doi.org/10.5281/zenodo.23384197)
+Formalization: https://github.com/creelie/urban-chainsaw/blob/main/lean/Kourovka2071.lean (release v2.1.0: https://github.com/creelie/urban-chainsaw/releases/tag/v2.1.0)
 
 Source files or ZIP: Kourovka2071b_final2-tex.zip (the folder Kourovka2071b_final2-tex/ with main.tex, elsarticle.cls and figures/ as PNG; seven entries; compiles with latexmk -pdf main.tex, no BibTeX pass, all fonts embedded). Do not upload the master zip or the Lean files here.
 AI provenance files: AI_PROVENANCE_Kourovka2071b.md
 License: CC BY 4.0
 
-Data availability (in the paper): LaTeX source, the Lean 4 formalization and the programs archived at Zenodo under doi:10.5281/zenodo.23384197 (release v2.0.0; all versions 10.5281/zenodo.23339830); repository https://github.com/creelie/urban-chainsaw; the folder preprintKourovka2071b holds the PDF only.
+Data availability (in the paper): LaTeX source, the Lean 4 formalization and the programs in release v2.1.0, https://github.com/creelie/urban-chainsaw/releases/tag/v2.1.0; repository https://github.com/creelie/urban-chainsaw; the folder preprintKourovka2071b holds the PDF only.
 AI disclosure (in the paper, Data and code availability): Deep Bhattacharjee carried out the computations and the Lean, Julia, C, C++, Python and shell verifications, and the proofs and the text were drafted, with AI assistance (Claude, Anthropic); both authors approved the final version. No separate AI declaration.
 Funding: none. Competing interests: none.
 Device folder: D:\Hexagon\03 Kourovka2071b.

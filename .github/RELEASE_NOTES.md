@@ -10,6 +10,8 @@ Lean 4 with Mathlib checks the whole statement (K2071.main_theorem: 63 vertices,
 Python, Julia, C and C++ check the graph, the orbits and the card types. This release runs all of
 them, Lean included.
 
+Version 2.1.0 is the journal version for Discrete Mathematics: it cites this release instead of a DOI and leaves out the footnotes unrelated to the proof. The paper is also in `paper/paper1/` and its LaTeX source zip in `paper/paper2/`.
+
 Files: the paper (`Kourovka2071b_final2.pdf`), its LaTeX source with the figures as PNG
 (`Kourovka2071b_final2-tex.zip`) and the arXiv tarball (`Kourovka2071b_final2-arxiv.tar.gz`). The
 archive of the tag holds the Lean project, the check programs and the master zip

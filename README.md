@@ -8,7 +8,7 @@ and Ushashi Bhattacharya (Formerly, National Taiwan University, Taipei 106319,
 Taiwan; rai.bhattacharya.in@gmail.com; ORCID 0009-0002-2254-3914).
 
 - Paper: [`preprintKourovka2071b/Kourovka2071b.pdf`](preprintKourovka2071b/Kourovka2071b.pdf)
-- Lean 4 formalization on Zenodo: doi:[10.5281/zenodo.23384197](https://doi.org/10.5281/zenodo.23384197) (release v2.0.0; all versions: doi:[10.5281/zenodo.23339830](https://doi.org/10.5281/zenodo.23339830))
+- Release cited by the paper: [v2.1.0](https://github.com/creelie/urban-chainsaw/releases/tag/v2.1.0); journal version in [`paper/paper1/`](paper/paper1/) (PDF) and [`paper/paper2/`](paper/paper2/) (LaTeX source zip)
 - Master zip: [`MasterKourovka2071b_masterzipfinal2.zip`](https://github.com/creelie/urban-chainsaw/raw/main/MasterKourovka2071b_masterzipfinal2.zip)
 - Target journal: Discrete Mathematics (`journal/JOURNAL.md`)
 - MSC 2020: Primary 05C60; Secondary 05C25, 20D15, 68V15
@@ -106,8 +106,9 @@ zip and tar; `figures/make_figures.sh` redraws the figures).
 
 ## Archive
 
-| Release | Zenodo DOI |
+| Release | Link |
 |---|---|
-| v2.0.0 (two authors, journal format) | [10.5281/zenodo.23384197](https://doi.org/10.5281/zenodo.23384197) |
-| v1.0.0 | [10.5281/zenodo.23339831](https://doi.org/10.5281/zenodo.23339831) |
-| all versions | [10.5281/zenodo.23339830](https://doi.org/10.5281/zenodo.23339830) |
+| v2.1.0 (journal version; cited by the paper) | [https://github.com/creelie/urban-chainsaw/releases/tag/v2.1.0](https://github.com/creelie/urban-chainsaw/releases/tag/v2.1.0) |
+| v2.0.0 | [https://github.com/creelie/urban-chainsaw/releases/tag/v2.0.0](https://github.com/creelie/urban-chainsaw/releases/tag/v2.0.0) |
+| v1.0.1 | [https://github.com/creelie/urban-chainsaw/releases/tag/v1.0.1](https://github.com/creelie/urban-chainsaw/releases/tag/v1.0.1) |
+| v1.0.0 | [https://github.com/creelie/urban-chainsaw/releases/tag/v1.0.0](https://github.com/creelie/urban-chainsaw/releases/tag/v1.0.0) |

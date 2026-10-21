@@ -10,8 +10,7 @@
 
 \journal{Discrete Mathematics}
 
-\newcommand{\zenodoID}{10.5281/zenodo.23384197}
-\newcommand{\preprintURL}{https://github.com/creelie/urban-chainsaw/blob/main/preprintKourovka2071b/Kourovka2071b.pdf}
+\newcommand{\releaseURL}{https://github.com/creelie/urban-chainsaw/releases/tag/v2.1.0}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -69,7 +68,7 @@ vertex-deleted subgraph \sep pseudosimilar vertices \sep Cayley graph \sep Suzuk
 
 \section{Introduction}\label{sec:intro}
 
-All graphs are finite and simple. For a vertex $v$ of a graph $G$, the \emph{card} $G-v$ is the subgraph induced on $V(G)\setminus\{v\}$. Let $k(G)$ be the number of isomorphism classes of cards of $G$ and $r(G)$ the number of orbits of $\Aut(G)$ on $V(G)$.\footnote{Counting the orbits of a finite group on a finite configuration is the same task as counting the chamber types of a Voronoi domain under a Weyl group, which in \cite{BBB26} is done for $W(D_4)$ of order $192$; here the group has order $64$ and acts on $63$ points, and the five orbits are told apart by invariants of the graph rather than of the geometry.} An automorphism mapping $u$ to $v$ restricts to an isomorphism $G-u\to G-v$, so $k(G)\le r(G)$. Vertices $u,v$ in different orbits with $G-u\cong G-v$ are called \emph{pseudosimilar}; they exist exactly when $k(G)<r(G)$.
+All graphs are finite and simple. For a vertex $v$ of a graph $G$, the \emph{card} $G-v$ is the subgraph induced on $V(G)\setminus\{v\}$. Let $k(G)$ be the number of isomorphism classes of cards of $G$ and $r(G)$ the number of orbits of $\Aut(G)$ on $V(G)$. An automorphism mapping $u$ to $v$ restricts to an isomorphism $G-u\to G-v$, so $k(G)\le r(G)$. Vertices $u,v$ in different orbits with $G-u\cong G-v$ are called \emph{pseudosimilar}; they exist exactly when $k(G)<r(G)$.
 
 Problem~20.71 of the Kourovka Notebook \cite{Kourovka}, posed by J.~Lauri and communicated by V.~Pannone, reads: ``For a connected graph $G$ with $k$ isomorphism types of cards, can $\Aut(G)$ have more than $k$ orbits on the vertex set $V(G)$ a) for $k=2$? b) for $k=3$? c) for $k=4$?'' The comment to the problem records that $r(G)=1$ when $k(G)=1$, and that connected graphs with $(k,r)=(5,6)$ and $(6,7)$ are known. Prajapati \cite{Prajapati} answered (c) with a connected graph on $9$ vertices having $k=4$ and $r=5$, and found by exhaustive search that no connected graph on at most $12$ vertices answers (a) or (b). We answer (b).
 
@@ -77,7 +76,7 @@ Problem~20.71 of the Kourovka Notebook \cite{Kourovka}, posed by J.~Lauri and co
 There is a connected graph $X$ on $63$ vertices with $k(X)=3$ and $r(X)=5$.
 \end{theorem}
 
-The graph $X$ is obtained from a Cayley graph $Y$ of a Suzuki $2$-group $H$ of order $64$ \cite{Higman} by deleting the identity.\footnote{A Cayley graph carries the word metric of its group with respect to the chosen generators. In the present finite $2$-group every element is within distance two of the identity; the opposite extreme, where the word metric is negatively curved at large scale, is the setting of hyperbolic groups treated in \cite{Bha22}.} Left multiplications of $H$ make $X-x$ isomorphic to $X-x^{-1}$, and inversion of $H$ exchanges two pairs of $\Aut(X)$-orbits (Section~\ref{sec:cards}). The proof that these orbits are distinct rests on the fact that $Y$ is a divisible design graph \cite{HKM}: two distinct vertices have two common neighbours if they lie in the same coset of the centre of $H$ and three otherwise (Section~\ref{sec:graph}). The cosets carry a Fano plane defined by the graph, which separates the orbits (Section~\ref{sec:orbits}).\footnote{The plane is read off from the pattern of common neighbours between cosets, in the way that the intersection pattern of a family of sets is recorded by its nerve; the nerve and its iterated versions are studied in \cite{BB26}.} The whole proof is formalized in Lean~4 and checked by its kernel (Section~\ref{sec:lean}). Part~(a) remains open.
+The graph $X$ is obtained from a Cayley graph $Y$ of a Suzuki $2$-group $H$ of order $64$ \cite{Higman} by deleting the identity. Left multiplications of $H$ make $X-x$ isomorphic to $X-x^{-1}$, and inversion of $H$ exchanges two pairs of $\Aut(X)$-orbits (Section~\ref{sec:cards}). The proof that these orbits are distinct rests on the fact that $Y$ is a divisible design graph \cite{HKM}: two distinct vertices have two common neighbours if they lie in the same coset of the centre of $H$ and three otherwise (Section~\ref{sec:graph}). The cosets carry a Fano plane defined by the graph, which separates the orbits (Section~\ref{sec:orbits}). The whole proof is formalized in Lean~4 and checked by its kernel (Section~\ref{sec:lean}). Part~(a) remains open.
 
 \section{The group and the graph}\label{sec:graph}
 
@@ -261,7 +260,7 @@ Independent computations in exact integer arithmetic confirm that $X$ has $63$ v
 
 \section*{Data and code availability}
 \begingroup\raggedright
-The \LaTeX{} source of the paper, the Lean~4 formalization of Theorem~\ref{thm:main} described in Section~\ref{sec:lean}, and the Python, Julia, C, C\texttt{++} and shell programs that recompute the graph, its orbits and its card types are archived at Zenodo under doi:\href{https://doi.org/\zenodoID}{\zenodoID}; the paper is available at \url{\preprintURL}. Deep Bhattacharjee carried out the computations and the Lean, Julia, C, C\texttt{++}, Python and shell verifications, and the proofs and the text were drafted, with AI assistance (Claude, Anthropic); both authors approved the final version.\par
+The \LaTeX{} source of the paper, the Lean~4 formalization of Theorem~\ref{thm:main} described in Section~\ref{sec:lean}, and the Python, Julia, C, C\texttt{++} and shell programs that recompute the graph, its orbits and its card types are in release~v2.1.0 of the repository \url{https://github.com/creelie/urban-chainsaw}. Deep Bhattacharjee carried out the computations and the Lean, Julia, C, C\texttt{++}, Python and shell verifications, and the proofs and the text were drafted, with AI assistance (Claude, Anthropic); both authors approved the final version.\par
 \endgroup
 
 \section*{Ethical declarations}
@@ -297,24 +296,6 @@ W.~H. Haemers, H.~Kharaghani, M.~A. Meulenberg, Divisible design graphs, J.
   Combin. Theory Ser. A 118~(3) (2011) 978--992.
 \newblock \href {https://doi.org/10.1016/j.jcta.2010.10.003}
   {\path{doi:10.1016/j.jcta.2010.10.003}}.
-
-\bibitem{BBB26}
-D.~Bhattacharjee, U.~Bhattacharya, S.~Bhattacharya, The sphere packing problem
-  in dimension 4, Preprints.org (2026).
-\newblock \href {https://doi.org/10.20944/preprints202606.0856.v11}
-  {\path{doi:10.20944/preprints202606.0856.v11}}.
-
-\bibitem{Bha22}
-D.~Bhattacharjee, Establishing equivariant class $[O]$ for hyperbolic groups,
-  Asian Res. J. Math. 18~(11) (2022) 362--369.
-\newblock \href {https://doi.org/10.9734/arjom/2022/v18i11615}
-  {\path{doi:10.9734/arjom/2022/v18i11615}}.
-
-\bibitem{BB26}
-D.~Bhattacharjee, U.~Bhattacharya, Iterated nerve complexes for $k$-fold sensor
-  coverage, Preprints.org (2026).
-\newblock \href {https://doi.org/10.20944/preprints202606.1351.v2}
-  {\path{doi:10.20944/preprints202606.1351.v2}}.
 
 \bibitem{MU21}
 L.~de~Moura, S.~Ullrich, The {L}ean 4 theorem prover and programming language,
